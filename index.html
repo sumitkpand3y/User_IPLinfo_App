@@ -1,0 +1,25 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket.IO Example</title>
+</head>
+<body>
+    <script type="module">
+        import { io } from '/socket.io/socket.io.js';
+
+        const socket = io();
+
+        socket.on('connect', () => {
+            console.log('Connected to server');
+        });
+
+        // Listen for custom events from the server
+        socket.on('serverMessage', (message) => {
+            console.log('Server message:', message);
+        });
+    </script>
+</body>
+</html>
